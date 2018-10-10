@@ -51,5 +51,23 @@ def self.find_or_create_by_name (name)
   end
 end 
 
+def self.new_from_filename(filename)
+  artist_name = filename.split("-")[0].strip
+  song_name = filename.split("-")[1].strip
+  genre_name = filename.split("-")[2].split(".")[0].strip
+  
+  artist = Artist.find_or_create_by_name (artist_name)
+  genre = Genre.find_or_create_by_name (genre_name)
+  song = self.new(song_name  , artist ,genre )
+  song
+end
 
+
+  def self.create_from_filename(filename)
+    song = self.new_from_filename(filename)
+    song.save
+    song
+  end
+  
+  
 end
