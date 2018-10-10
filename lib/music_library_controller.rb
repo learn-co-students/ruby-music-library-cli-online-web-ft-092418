@@ -20,7 +20,15 @@ class  MusicLibraryController
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
     
+    demand = gets.submit
     
+    while demand !="exit"
+    
+    
+    demand = gets.submit
+  end
+    
+   
   end 
   
   
